@@ -1,6 +1,7 @@
 import { easeOut, motion, useScroll, useTransform } from "motion/react";
 import { useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
+import heroImage from "../../assets/images/regenerated_image_1778874300436.jpg";
 
 export function Hero() {
   const { scrollY } = useScroll();
@@ -14,7 +15,7 @@ export function Hero() {
         className="absolute inset-3 rounded-3xl overflow-hidden z-0 bento-card"
       >
         <img 
-          src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=2000&auto=format&fit=crop" 
+          src={heroImage} 
           alt="Clínica luxuosa Bawt Estética" 
           className="w-full h-[120%] object-cover object-center brightness-75"
         />
@@ -60,22 +61,7 @@ export function Hero() {
         </motion.a>
       </div>
 
-      {/* Elegant scroll indicator */}
-      <motion.div 
-        className="absolute bottom-12 left-6 md:left-12 lg:left-24 text-text-secondary text-xs uppercase tracking-[0.2em] font-medium hidden md:flex items-center gap-4"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-      >
-        <span className="writing-vertical-rl rotate-180 mb-8">Scroll</span>
-        <div className="w-[1px] h-16 bg-gold-primary/50 relative overflow-hidden">
-          <motion.div 
-            className="absolute top-0 left-0 w-full h-full bg-gold-primary"
-            animate={{ y: ["-100%", "100%"] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-          />
-        </div>
-      </motion.div>
+
     </section>
   );
 }

@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import aboutImage from "../../assets/images/regenerated_image_1778874301025.png";
 
 export function About() {
   return (
@@ -14,7 +15,7 @@ export function About() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <img 
-            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=1000&auto=format&fit=crop" 
+            src={aboutImage} 
             alt="Dra. da Bawt Estética" 
             className="w-full h-full object-cover object-center rounded-xl"
           />

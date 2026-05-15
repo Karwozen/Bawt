@@ -39,6 +39,9 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-base text-text-secondary font-sans font-normal selection:bg-gold-light selection:text-text-primary;
   }
