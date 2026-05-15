@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,900&family=Montserrat:wght@300;400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-base: #FDFCF8;
+  --color-surface: #FFFFFF;
+  --color-glass: rgba(255, 255, 255, 0.4);
+  --color-glass-border: rgba(212, 175, 55, 0.3);
+  
+  --color-gold-light: #F9E596;
+  --color-gold-primary: #D4AF37;
+  --color-gold-dark: #B8860B;
+
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #4A4A4A;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-base text-text-secondary font-sans font-normal selection:bg-gold-light selection:text-text-primary;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-text-primary font-serif tracking-tighter;
+  }
+}
+
+@layer utilities {
+  .text-gold-gradient {
+    background: linear-gradient(90deg, #B8860B 0%, #D4AF37 50%, #B8860B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .bg-gold-gradient {
+    background: linear-gradient(90deg, #B8860B 0%, #D4AF37 50%, #B8860B 100%);
+  }
+
+  .glass-card {
+    backdrop-filter: blur(12px);
+    background: var(--color-glass);
+    border: 1px solid var(--color-glass-border);
+    border-radius: 24px;
+    transition: all 0.3s ease;
+  }
+  
+  .bento-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid var(--color-glass-border);
+    background: var(--color-surface);
+    transition: all 0.3s ease;
+  }
+
+  .gold-glow {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+  }
+  
+  .gold-glow-strong {
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+  }
+}
